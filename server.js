@@ -49,6 +49,7 @@ app.post('/api/init', (req, res) => {
     })
   } else {
     res.sendStatus(406);
+    console.log(req);
   }
 });
 app.post('/api/verify', (req, res) => {
@@ -68,6 +69,17 @@ app.post('/api/verify', (req, res) => {
             var detectedComment = root.querySelector('.content').text.trim();
             if (detectedComment == docs[0].code) {
               res.sendStatus(200);
+              db.find({
+                user: req.body.user
+              }, (err, docss) => {
+                if (docss[0]) {
+                  db.remove({
+                    user: req.body.user
+                  }, {}, (err, numRemoved) => {
+                    console.log(`Removed duplicate user ${req.body.user} from database`);
+                  });
+                }
+              });
             } else {
               res.sendStatus(403);
             }
