@@ -28,7 +28,9 @@ app.post('/api/init', (req, res) => {
       if (docs[0]) {
         db.remove({
           user: req.body.user
-        }, {}, (err, numRemoved) => {
+        }, {
+          multi: true
+        }, (err, numRemoved) => {
           console.log(`Removed duplicate user ${req.body.user} from database`);
         });
       }
@@ -75,7 +77,9 @@ app.post('/api/verify', (req, res) => {
                 if (docss[0]) {
                   db.remove({
                     user: req.body.user
-                  }, {}, (err, numRemoved) => {
+                  }, {
+                    multi: true
+                  }, (err, numRemoved) => {
                     console.log(`Removed duplicate user ${req.body.user} from database`);
                   });
                 }
