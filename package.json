@@ -1,0 +1,28 @@
+{
+  "name": "sv2",
+  "version": "1.0.0",
+  "description": "A next-generation alternative to ScratchVerifier",
+  "main": "server.js",
+  "dependencies": {
+    "crypto-random-string": "^3.3.0",
+    "express": "^4.17.1",
+    "nedb": "^1.8.0",
+    "node-fetch": "^2.6.1",
+    "node-html-parser": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micahlt/sv2.git"
+  },
+  "author": "Micah Lindley",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/micahlt/sv2/issues"
+  },
+  "homepage": "https://github.com/micahlt/sv2#readme"
+}
