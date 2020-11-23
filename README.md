@@ -1,6 +1,6 @@
 # sv²
 
-A next-generation alternative to [ScratchVerifier](http://scratchverifier.ddns.net:8888/site)
+A next-generation alternative to [ScratchVerifier](http://scratchverifier.ddns.net:8888/site).  A public server is available at https://sv2-server.herokuapp.com/
 
 ## API Reference
 
