@@ -68,8 +68,11 @@ app.post('/api/verify', (req, res) => {
           })
           .then((data) => {
             const root = html.parse(data);
-            var detectedComment = root.querySelector('.content').text.trim();
-            if (detectedComment == docs[0].code) {
+            var comment = {
+              plaintext: root.querySelector('.content').text.trim(),
+              username: root.querySelector('#comment-user').getAttribute('data-comment-user')
+            };
+            if (comment.plaintext == docs[0].code && comment.username == req.body.user) {
               res.sendStatus(200);
               db.find({
                 user: req.body.user
