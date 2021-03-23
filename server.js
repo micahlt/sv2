@@ -36,8 +36,8 @@ app.post('/api/init', (req, res) => {
       }
     });
     var code = cryptoRandomString({
-      length: 50,
-      type: 'alphanumeric'
+      length: 45,
+      type: 'distinguishable'
     });
     var doc = {
       user: req.body.user,
